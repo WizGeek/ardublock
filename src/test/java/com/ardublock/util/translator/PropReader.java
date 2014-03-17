@@ -2,6 +2,7 @@ package com.ardublock.util.translator;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
@@ -21,9 +22,13 @@ public class PropReader
 
 	private void retrieveSourceProperites()
 	{
-		Enumeration e = sourceProp.keys();
-		
-		List<String> list = Collections.list(e);
+		Enumeration<Object> e = sourceProp.keys();
+		//TODO:  Validate this
+		List<String> list = new ArrayList<String>();
+		while (e.hasMoreElements()) {
+			list.add(e.nextElement().toString());
+		}
+		//List<String> list = Collections.list(e);
         Collections.sort(list);
  
         //

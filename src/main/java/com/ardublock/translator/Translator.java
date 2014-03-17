@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.swing.JOptionPane;
-
 import com.ardublock.translator.adaptor.BlockAdaptor;
 import com.ardublock.translator.adaptor.OpenBlocksAdaptor;
 import com.ardublock.translator.block.TranslatorBlock;

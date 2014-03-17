@@ -1,12 +1,12 @@
 package com.ardublock;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
 
 import com.ardublock.core.Context;
@@ -15,17 +15,20 @@ import com.ardublock.translator.block.exception.SocketNullException;
 import com.ardublock.translator.block.exception.SubroutineNameDuplicatedException;
 import com.ardublock.translator.block.exception.SubroutineNotDeclaredException;
 
-import edu.mit.blocks.renderable.RenderableBlock;
-import edu.mit.blocks.workspace.Workspace;
-
-import org.testng.annotations.*;
-
 public class MainTest
 {
 	private Main main;
+	
+	//TODO:  Clean up "unused"
+	@SuppressWarnings("unused")
 	private Translator translator;
+	
+	//TODO:  Clean up "unused"
+	@SuppressWarnings("unused")
 	private Context context;
 
+	//TODO:  Validate @AfterClass annotation
+	@AfterClass
 	private void teardown() {
 		main.shutdown();
 	}

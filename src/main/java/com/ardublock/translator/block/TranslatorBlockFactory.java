@@ -46,8 +46,8 @@ public class TranslatorBlockFactory
 		
 		try
 		{
-			Class blockClass = Class.forName(className);
-			Constructor constructor = blockClass.getConstructor(Long.class, Translator.class, String.class, String.class, String.class);
+			Class<?> blockClass = Class.forName(className);
+			Constructor<?> constructor = blockClass.getConstructor(Long.class, Translator.class, String.class, String.class, String.class);
 			TranslatorBlock ret = (TranslatorBlock)constructor.newInstance(blockId, translator, codePrefix, codeSuffix, label);
 			return ret;
 		}
