@@ -339,7 +339,7 @@ public class OpenblocksFrame extends JFrame
 			}
 		}
 		this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-		context.resetWorksapce();
+		context.resetWorkspace();
 		context.setWorkspaceChanged(false);
 		this.setTitle(this.makeFrameTitle());
 		this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));

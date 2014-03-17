@@ -39,7 +39,8 @@ public class Main
 
 	public void shutdown()
 	{
-		openblocksFrame.dispatchEvent(new WindowEvent(openblocksFrame, WindowEvent.WINDOW_CLOSING));
+		if (openblocksFrame != null)
+			openblocksFrame.dispatchEvent(new WindowEvent(openblocksFrame, WindowEvent.WINDOW_CLOSING));
 	}
 	
 	@SuppressWarnings("unused")
