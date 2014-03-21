@@ -7,7 +7,6 @@
 	checks can be made regarding the validity of a default argument when the 
 	BlockGenuses are first loaded. -->
 <BlockLangDef>
-
 	<BlockConnectorShapes>
 		<BlockConnectorShape shape-type="number" shape-number="1" />
 		<BlockConnectorShape shape-type="number-list" shape-number="2" />
@@ -29,6 +28,26 @@
 	</BlockConnectorShapes>
 	<BlockGenuses>
 		<BlockGenus name="dummy" kind="command" initlabel="" color="0 0 0" />
+		<BlockGenus name="turtlebot_forward" kind="command" color="255 240 0" initlabel="bg.turtlebot_forward" is-starter="yes" is-terminator="yes" label-unique="no">
+			<description>
+				<text>Moves the TurtleBot forward</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.rotations">
+					<DefaultArg genus-name="number" label="1" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="turtlebot_turnleft" kind="command" color="255 240 0" initlabel="bg.turtlebot_turnleft" is-starter="yes" is-terminator="yes" label-unique="no">
+			<description>
+				<text>Turns the TurtleBot left on its left wheel</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.degrees">
+					<DefaultArg genus-name="number" label="90" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
 		<!-- ******************** Controls Menu *************** -->
 		<BlockGenus name="program" kind="command" color="255 240 0" initlabel="bg.program" is-starter="yes" is-terminator="yes" label-unique="no">
 			<description>
@@ -4852,10 +4871,10 @@
 
 	<BlockDrawerSets>
 		<BlockDrawerSet name="factory" type="stack" location="southwest" window-per-drawer="no" drawer-draggable="no">
-		<!-- 
-			<BlockDrawer name="bd.TurtleBot" button-color="0 0 240">
+			<BlockDrawer name="bd.turtlebot" type="factory" is-open="yes" button-color="0 0 110">
+				<BlockGenusMember>turtlebot_forward</BlockGenusMember>
+				<BlockGenusMember>turtlebot_turnleft</BlockGenusMember>
 			</BlockDrawer>
-		 -->
 			<BlockDrawer name="bd.control" type="factory" is-open="yes" button-color="0 220 0">
 				<BlockGenusMember>program</BlockGenusMember>
 				<BlockGenusMember>loop</BlockGenusMember>
